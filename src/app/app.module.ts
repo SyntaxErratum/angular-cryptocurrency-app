@@ -23,6 +23,7 @@ import { CustomListsComponent } from './custom-lists/custom-lists.component';
 })
 
 export class AppModule {
+  //This is temporary logic for when I pull data in from the api. This isn't it's perminent location
   private wciKey = 'gvVUl06RLovFfg3E5ZNkhJbaq8BQRT';
   private  wciUrl = 'https://www.worldcoinindex.com/apiservice/';
   private marketsApi = `v2getmarkets?key=${this.wciKey}&fiat=usd`;
