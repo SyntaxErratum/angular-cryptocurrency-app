@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Currency } from '../models/currency.model';
+import { CurrencyDataService } from '../currency-data.service';
 
 @Component({
     selector: 'app-top-currencies',
@@ -7,38 +8,11 @@ import { Currency } from '../models/currency.model';
     styleUrls: ['./top-currencies.component.scss']
 })
 
-export class TopCurrenciesComponent {
+export class TopCurrenciesComponent implements OnInit {
+    service = new CurrencyDataService();
     topList: Currency[];
 
     ngOnInit(): void {
-        this.topList = this.getCurrencies();
-    }
-
-    getCurrencies() {
-        const mockData =
-        [
-            new Currency(
-                'BTC',
-                'Bitcoin',
-                '10000000',
-                '999999999999',
-                Date.now
-            ),
-            new Currency(
-                'ETH',
-                'Ethereum',
-                '10000',
-                '99999999999',
-                Date.now
-            ),
-            new Currency(
-                'LTC',
-                'Litecoin',
-                '2000',
-                '9999999999',
-                Date.now
-            )
-        ];
-        return mockData;
+        this.topList = this.service.getMochData();
     }
 }
