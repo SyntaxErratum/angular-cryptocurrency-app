@@ -8,7 +8,7 @@ import { MOCKDATA } from './data/mock-data';
 })
 
 export class CurrencyDataService {
-    mockData = MOCKDATA;
+    mockData: Currency[] = MOCKDATA;
     // getMockData(): Observable<Currency[]> {
         
     //     return this.mockData;
