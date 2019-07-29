@@ -1,4 +1,4 @@
-//This model is based off of the data being provided by worldcoinindex.com
+// This model is based off of the data being provided by worldcoinindex.com
 export class Currency {
     public label: string;
     public name: string;

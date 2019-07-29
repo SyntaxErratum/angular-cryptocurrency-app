@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -16,28 +18,11 @@ import { CustomListsComponent } from './custom-lists/custom-lists.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 
-export class AppModule {
-  //This is temporary logic for when I pull data in from the api. This isn't it's perminent location
-  private wciKey = 'gvVUl06RLovFfg3E5ZNkhJbaq8BQRT';
-  private  wciUrl = 'https://www.worldcoinindex.com/apiservice/';
-  private marketsApi = `v2getmarkets?key=${this.wciKey}&fiat=usd`;
-  getMarketData() {
-    const fullUrl = `${this.wciUrl}${this.marketsApi}`;
-    return fullUrl;
-  }
-  getCustomListData(list) {
-    let fullUrl = `${this.wciUrl}ticker?key=${this.wciKey}&fiat=usd&label=`;
-    list.forEach(
-      (item) => {
-        fullUrl = fullUrl + `${item}-`;
-      }
-    );
-    fullUrl = fullUrl.slice(0, -1);
-  }
-}
+export class AppModule {}
