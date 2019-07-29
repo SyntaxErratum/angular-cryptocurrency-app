@@ -1,1 +1,11 @@
 <h2>Top Currencies</h2>
+<div *ngFor='let currency of topList'>
+    <ul>
+        <li>
+            Name: {{ currency.name }}
+        </li>
+        <li>
+            Price: {{ currency.price }}
+        </li>
+    </ul>
+</div>
