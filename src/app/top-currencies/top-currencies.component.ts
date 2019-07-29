@@ -13,6 +13,6 @@ export class TopCurrenciesComponent implements OnInit {
     topList: Currency[];
 
     ngOnInit(): void {
-        this.topList = this.service.getMochData();
+        this.service.getMockData().subscribe(data => this.topList = data);
     }
 }

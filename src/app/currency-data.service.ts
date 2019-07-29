@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+
 import { Currency } from './models/currency.model';
 import { MOCKDATA } from './data/mock-data';
 
@@ -8,14 +9,12 @@ import { MOCKDATA } from './data/mock-data';
 })
 
 export class CurrencyDataService {
-    mockData: Currency[] = MOCKDATA;
-    // getMockData(): Observable<Currency[]> {
-        
-    //     return this.mockData;
-    //     console.log(this.mockData);
-    // }
 
-    getMochData() {
-        return this.mockData;
+    getMockData(): Observable<Currency[]> {
+        return of(MOCKDATA);
     }
+
+    // getMochData() {
+    //     return this.mockData;
+    // }
 }
