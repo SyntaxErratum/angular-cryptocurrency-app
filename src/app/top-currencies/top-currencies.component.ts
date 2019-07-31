@@ -31,7 +31,7 @@ export class TopCurrenciesComponent implements OnInit {
             partialList => {
                 partialList.map(
                     item => {
-                        let tempItem = new Currency(item.Label, item.Name, item.Price, item.Volume_24h, item.Timestamp);
+                        const tempItem: Currency = new Currency(item);
                         this.topList.push(tempItem);
                     }
                 );
@@ -40,8 +40,8 @@ export class TopCurrenciesComponent implements OnInit {
         this.topList.sort(
             (a, b) => (a.volume < b.volume) ? 1 : -1
         );
-        this.topList.forEach(
-            item => console.log(item.name)
-        );
+        // this.topList.forEach(
+        //     item => console.log(item.name)
+        // );
     }
 }

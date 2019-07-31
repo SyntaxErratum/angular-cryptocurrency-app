@@ -5,11 +5,11 @@ export class Currency {
     public price: number;
     public volume: number;
     public timestamp: number;
-    constructor(Label, Name, Price, Volume_24h, Timestamp) {
-        this.label = Label;
-        this.name = Name;
-        this.price = Price;
-        this.volume = Volume_24h;
-        this.timestamp = Timestamp;
+    constructor(item) {
+        this.label = item.Label;
+        this.name = item.Name;
+        this.price = item.Price;
+        this.volume = item.Volume_24h;
+        this.timestamp = item.Timestamp;
     }
 }
