@@ -27,21 +27,14 @@ export class TopCurrenciesComponent implements OnInit {
     }
 
     mapData(data): void {
-        data.Markets.map(
-            partialList => {
-                partialList.map(
-                    item => {
-                        const tempItem: Currency = new Currency(item);
-                        this.topList.push(tempItem);
-                    }
-                );
+        data.Markets.flat().map(
+            item => {
+                const tempItem: Currency = new Currency(item);
+                this.topList.push(tempItem);
             }
         );
         this.topList.sort(
             (a, b) => (a.volume < b.volume) ? 1 : -1
         );
-        // this.topList.forEach(
-        //     item => console.log(item.name)
-        // );
     }
 }
